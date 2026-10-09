@@ -1,0 +1,13 @@
+{
+  "name": "la-despensa",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Catálogo y pedidos de ejemplo con Node.js y SQLite",
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  }
+}

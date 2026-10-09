@@ -1,0 +1,7 @@
+**/build/
+**/out/
+**/target/
+**/data/*.txt
+**/.env
+*.class
+

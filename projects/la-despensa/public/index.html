@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f3ee">
+    <meta name="description" content="Catálogo de demostración de La Despensa, una tienda de barrio ficticia.">
+    <title>La Despensa | Tienda de barrio</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="announcement">Comercio local, compra tranquila <span>Catálogo y pedidos de demostración</span></div>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="La Despensa, inicio">
+        <span class="brand-mark" aria-hidden="true">D</span>
+        <span><strong>La Despensa</strong><small>mercado de barrio</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a class="nav-cart" href="#cesta">Tu cesta <span id="cart-count">0</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Lo de cada día, cerca de casa</p>
+          <h1 id="hero-title">Una compra sencilla empieza <em>por lo bueno.</em></h1>
+          <p class="hero-description">Productos de despensa, hogar y papelería en un catálogo pequeño, claro y cuidado.</p>
+          <a class="button button-dark" href="#catalogo">Ver productos <span aria-hidden="true">↘</span></a>
+          <div class="hero-note"><span class="note-dot" aria-hidden="true"></span> Datos ficticios · Sin pagos reales</div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="sun"></div>
+          <div class="hero-orbit orbit-one"></div>
+          <div class="hero-orbit orbit-two"></div>
+          <div class="jar jar-oil"><span>aceite</span></div>
+          <div class="jar jar-honey"><span>miel</span></div>
+          <div class="hero-stamp">Cerca<br>y sencillo</div>
+          <div class="hero-caption">Selección de temporada<br>para tu mesa</div>
+        </div>
+      </section>
+
+      <section class="shop-section" id="catalogo" aria-labelledby="catalog-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Una selección pequeña</p>
+            <h2 id="catalog-title">Para llenar la cesta</h2>
+          </div>
+          <p class="section-aside">Productos sencillos para el día a día,<br>con la información a la vista.</p>
+        </div>
+
+        <form class="filters" id="search-form">
+          <label class="search-field">
+            <span class="sr-only">Buscar productos</span>
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="search-input" name="q" type="search" placeholder="¿Qué estás buscando?" maxlength="80">
+          </label>
+          <label class="select-field">
+            <span class="sr-only">Filtrar por categoría</span>
+            <select id="category-filter" name="category">
+              <option value="">Todas las categorías</option>
+            </select>
+          </label>
+          <label class="select-field sort-field">
+            <span class="sr-only">Ordenar productos</span>
+            <select id="sort-filter" name="sort">
+              <option value="name">Ordenar: nombre</option>
+              <option value="price-asc">Precio: menor a mayor</option>
+              <option value="price-desc">Precio: mayor a menor</option>
+            </select>
+          </label>
+          <button class="button button-outline" type="submit">Buscar</button>
+        </form>
+
+        <p class="result-message" id="catalog-message" role="status" aria-live="polite">Cargando productos…</p>
+        <div class="catalog-layout">
+          <div class="product-grid" id="product-grid" aria-label="Productos disponibles"></div>
+          <aside class="basket" id="cesta" aria-labelledby="basket-title">
+            <div class="basket-heading">
+              <div>
+                <p class="eyebrow">Pedido local</p>
+                <h2 id="basket-title">La cesta</h2>
+              </div>
+              <span class="basket-count" id="basket-count" aria-label="Unidades en la cesta">0</span>
+            </div>
+            <p class="basket-live-message" id="basket-message" role="status" aria-live="polite"></p>
+            <p class="basket-empty" id="basket-empty">Tu cesta está vacía. Pulsa «Añadir» en un producto para empezar.</p>
+            <ul class="basket-items" id="basket-items" aria-label="Productos de la cesta"></ul>
+            <div class="basket-summary">
+              <div class="basket-summary-row"><span>Recogida en tienda</span><strong>Gratis</strong></div>
+              <div class="basket-total"><span>Total</span><strong id="basket-total">0,00 €</strong></div>
+            </div>
+            <p class="basket-note">El stock se descuenta al guardar el pedido. Esta demo no realiza cobros.</p>
+
+            <form class="checkout-form" id="checkout-form">
+              <h3>Datos del pedido</h3>
+              <label for="customer-name">Nombre y apellidos</label>
+              <input id="customer-name" name="customerName" type="text" autocomplete="name" minlength="2" maxlength="100" pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+(?:[ '-][A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+)*" title="Usa letras; puedes separar nombres con espacios, guiones o apóstrofes." placeholder="Ej. Ana García" required>
+              <label for="customer-email">Correo electrónico</label>
+              <input id="customer-email" name="customerEmail" type="email" autocomplete="email" maxlength="150" placeholder="ana@ejemplo.es" required>
+              <label for="payment-method">Forma de pago</label>
+              <select id="payment-method" name="paymentMethod" required>
+                <option value="" selected disabled>Elige cómo pagar</option>
+              </select>
+              <p class="payment-note" id="payment-note">Puedes pagar al recogerlo o probar la opción de tarjeta, que no procesa ningún pago.</p>
+              <button class="button button-dark checkout-button" id="checkout-button" type="submit" disabled>Confirmar pedido</button>
+              <p class="checkout-message" id="checkout-message" role="status" aria-live="polite"></p>
+            </form>
+          </aside>
+        </div>
+        <div class="pagination" id="pagination" hidden>
+          <button class="page-button" id="previous-page" type="button">Anterior</button>
+          <span id="page-label"></span>
+          <button class="page-button" id="next-page" type="button">Siguiente</button>
+        </div>
+      </section>
+
+      <section class="numbers-section" id="como-funciona" aria-labelledby="numbers-title">
+        <div class="numbers-intro">
+          <p class="eyebrow">Una tienda ficticia</p>
+          <h2 id="numbers-title">El inventario,<br>sin sorpresas.</h2>
+          <p>Esta demo enseña el catálogo y el control de pedidos de una tienda local. Los números proceden de datos de ejemplo.</p>
+        </div>
+        <div class="numbers-grid" id="summary-grid">
+          <div class="number-card"><span>Productos</span><strong id="summary-products">—</strong></div>
+          <div class="number-card"><span>Categorías</span><strong id="summary-categories">—</strong></div>
+          <div class="number-card"><span>Pedidos de ejemplo</span><strong id="summary-orders">—</strong></div>
+          <div class="number-card"><span>Productos por reponer</span><strong id="summary-low-stock">—</strong></div>
+        </div>
+      </section>
+
+      <section class="closing-section">
+        <div>
+          <p class="eyebrow">Del catálogo a la base de datos</p>
+          <h2>Cada pedido<br>deja el stock al día.</h2>
+        </div>
+        <p>Las consultas, relaciones y reglas de inventario se explican en el README y en los archivos SQL del proyecto.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="/">
+        <span class="brand-mark" aria-hidden="true">D</span>
+        <span><strong>La Despensa</strong><small>mercado de barrio</small></span>
+      </a>
+      <p>Proyecto de demostración. No es una tienda real.</p>
+      <a href="#catalogo">Volver al catálogo ↑</a>
+    </footer>
+  </body>
+</html>

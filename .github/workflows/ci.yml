@@ -1,0 +1,31 @@
+name: Pruebas de La Despensa
+
+on:
+  push:
+    paths:
+      - 'projects/la-despensa/**'
+      - '.github/workflows/ci.yml'
+  pull_request:
+    paths:
+      - 'projects/la-despensa/**'
+      - '.github/workflows/ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: projects/la-despensa
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Ejecutar pruebas
+        run: node --test

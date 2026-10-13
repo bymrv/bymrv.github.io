@@ -8,7 +8,7 @@
   <title data-i18n="page-title">Manuel Rodríguez · Desarrollo web</title>
   <link rel="stylesheet" href="styles.css?v=20261009-hover">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <script src="portfolio.js?v=20261009-hover" defer></script>
+  <script src="portfolio.js?v=20261013-ubikate" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#inicio" data-i18n="skip-content">Saltar al contenido</a>
@@ -66,13 +66,37 @@
       </div>
 
       <div class="project-grid">
-        <article class="project-card barber-card featured-project">
+        <article class="project-card barber-card featured-project" id="ubikate">
+          <div class="project-copy">
+            <div class="project-meta"><span>01</span><span data-i18n="ubikate-category">PROYECTO FINAL DE DAW · EN EQUIPO</span></div>
+            <h3>UBIKATE</h3>
+            <p class="project-lede" data-i18n="ubikate-lede">Datos abiertos para conocer el entorno de una vivienda en Madrid.</p>
+            <p data-i18n="ubikate-description">Proyecto de tres integrantes. Mi aportación se centra en el backend, el modelo de datos y de clases, la documentación técnica y la revisión de las pull requests del equipo.</p>
+            <ul class="tag-list" data-i18n-aria="project-tech-label" aria-label="Tecnologías del proyecto"><li>Node.js</li><li>Express</li><li>JavaScript</li><li>MariaDB</li><li>SQL</li></ul>
+            <p class="project-note" data-i18n="ubikate-note">En desarrollo. Backend y base de datos preparados para ejecución local; integración de datos abiertos y cálculo de puntuaciones pendientes de completar.</p>
+            <div class="project-actions">
+              <a class="button button-outline" href="https://github.com/UBIKATE-MCN/Ubikate-core" target="_blank" rel="noreferrer"><span data-i18n="ubikate-source">Ver proyecto en GitHub</span><span aria-hidden="true">↗</span></a>
+              <a class="project-link" href="https://github.com/UBIKATE-MCN/Ubikate-core/pulls?q=is%3Apr+reviewed-by%3Abymrv" target="_blank" rel="noreferrer"><span data-i18n="ubikate-reviews">Ver mis revisiones</span><span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <div class="data-panel" data-i18n-aria="ubikate-panel-label" aria-label="Componentes del backend de Ubikate">
+            <div class="panel-top"><span data-i18n="ubikate-panel-title">BACKEND Y DATOS</span><span class="status-dot" data-i18n="ubikate-status">EN DESARROLLO</span></div>
+            <div class="route-row"><span class="route-step">01</span><span><strong>Node.js + Express</strong><small data-i18n="ubikate-server">Servidor y conexión a la base de datos</small></span><span class="route-mark" aria-hidden="true">→</span></div>
+            <div class="route-row"><span class="route-step">02</span><span><strong data-i18n="ubikate-model">Modelo de clases</strong><small data-i18n="ubikate-entities">Viviendas, distritos y usuarios</small></span><span class="route-mark" aria-hidden="true">→</span></div>
+            <div class="route-row"><span class="route-step">03</span><span><strong>MariaDB</strong><small data-i18n="ubikate-relational">Tablas y relaciones con claves foráneas</small></span><span class="route-mark" aria-hidden="true">↔</span></div>
+            <div class="panel-foot"><span>GET /api/health</span><span>GET /api/health/db</span></div>
+          </div>
+          <span class="project-spark" aria-hidden="true"></span>
+          <span class="card-index">01 / 04</span>
+        </article>
+
+        <article class="project-card barber-card">
           <a class="barber-image-wrap" href="barber-gold/index.html" target="_blank" rel="noreferrer" data-i18n-aria="demo-label" aria-label="Abrir la demo de Barber Gold en una pestaña nueva">
             <div class="preview-bar" aria-hidden="true"><span class="window-dots"><i></i><i></i><i></i></span><span>Barber Gold</span><span>↗</span></div>
             <img src="assets/barber-gold-preview.webp" width="1440" height="1080" alt="Captura de la página de inicio de Barber Gold, con su diseño y navegación originales" data-i18n-alt="barber-image-alt" loading="lazy">
           </a>
           <div class="project-copy barber-copy">
-            <div class="project-meta"><span>01</span><span data-i18n="barber-category">DISEÑO Y DESARROLLO WEB</span></div>
+            <div class="project-meta"><span>02</span><span data-i18n="barber-category">DISEÑO Y DESARROLLO WEB</span></div>
             <h3>Barber Gold</h3>
             <p class="project-lede" data-i18n="barber-lede">Propuesta digital para una barbería.</p>
             <p data-i18n="barber-description">Diseñé una web con toda la información en una sola página: servicios, galería, navegación, preguntas frecuentes y un formulario de reservas de demostración.</p>
@@ -84,12 +108,12 @@
             </div>
           </div>
           <span class="project-spark" aria-hidden="true"></span>
-          <span class="card-index">01 / 03</span>
+          <span class="card-index">02 / 04</span>
         </article>
 
         <article class="project-card despensa-card">
           <div class="project-copy">
-            <div class="project-meta"><span>02</span><span data-i18n="despensa-category">APLICACIÓN WEB</span></div>
+            <div class="project-meta"><span>03</span><span data-i18n="despensa-category">APLICACIÓN WEB</span></div>
             <h3>La Despensa</h3>
             <p class="project-lede" data-i18n="despensa-lede">Catálogo y pedidos para una tienda de barrio.</p>
             <p data-i18n="despensa-description">Una aplicación con productos filtrables, cesta y registro de pedidos de demostración. El servidor expone una API HTTP y guarda los datos en SQLite.</p>
@@ -107,12 +131,12 @@
             <div class="panel-foot"><span>GET /api/products</span><span>POST /api/orders</span></div>
           </div>
           <span class="project-spark" aria-hidden="true"></span>
-          <span class="card-index">02 / 03</span>
+          <span class="card-index">03 / 04</span>
         </article>
 
         <article class="project-card java-card">
           <div class="java-heading">
-            <div class="project-meta"><span>03</span><span data-i18n="java-category">JAVA · INTERFACES · DATOS</span></div>
+            <div class="project-meta"><span>04</span><span data-i18n="java-category">JAVA · INTERFACES · DATOS</span></div>
             <h3 data-i18n="java-projects-title">Programación en Java</h3>
             <p data-i18n="java-projects-description">Ejercicios de programación orientada a objetos, interfaces gráficas y acceso a datos.</p>
             <a class="project-link" href="https://github.com/bymrv/bymrv.github.io/tree/main/projects/practicas-java"><span data-i18n="java-projects-link">Ver proyectos Java</span> <span aria-hidden="true">↗</span></a>
@@ -124,7 +148,7 @@
             <div><strong data-i18n="store-management">Gestión de tienda</strong><small data-i18n="jdbc-crud">JDBC, operaciones CRUD y consultas preparadas</small></div>
           </div>
           <span class="project-spark" aria-hidden="true"></span>
-          <span class="card-index">03 / 03</span>
+          <span class="card-index">04 / 04</span>
         </article>
       </div>
     </section>
